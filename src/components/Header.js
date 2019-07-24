@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useContext } from "react";
+import { carContext } from "../contexts/CarContext";
 
 const Header = props => {
+  const car = useContext();
   return (
     <>
       <figure className="image is-128x128">
