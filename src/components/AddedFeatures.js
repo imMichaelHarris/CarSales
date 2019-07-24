@@ -1,14 +1,15 @@
-import React from 'react';
+import React, { useContext } from "react";
+import { CarContext } from "../contexts/CarContext";
+import AddedFeature from "./AddedFeature";
 
-import AddedFeature from './AddedFeature';
-
-const AddedFeatures = props => {
+const AddedFeatures = () => {
+  const car = useContext(CarContext)
   return (
     <div className="content">
       <h6>Added features:</h6>
-      {props.car.features.length ? (
+      {car.features.length ? (
         <ol type="1">
-          {props.car.features.map(item => (
+          {car.features.map(item => (
             <AddedFeature key={item.id} feature={item} />
           ))}
         </ol>
