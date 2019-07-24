@@ -1,5 +1,5 @@
 export const ADD_FEATURE = "ADD_FEATURE";
-export const REMOVE_FEATUR = "REMOVE_FEATURE"
+export const REMOVE_FEATURE = "REMOVE_FEATURE"
 
 export const addFeature = item => {
   console.log("creator")
@@ -8,3 +8,10 @@ export const addFeature = item => {
     payload: item
   };
 };
+
+export const removeFeature = itemId => {
+  return {
+    type: REMOVE_FEATURE,
+    payload: itemId
+  }
+}
