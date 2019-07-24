@@ -18,14 +18,16 @@ const App = ({ state }) => {
 
   return (
     <div className="boxes">
-      <div className="box">
-        <Header car={state.car} />
-        <AddedFeatures car={state.car} />
-      </div>
-      <div className="box">
-        <AdditionalFeatures store={state.store} />
-        <Total car={state.car} additionalPrice={state.additionalPrice} />
-      </div>
+      <CarProvider value={state.car}>
+        <div className="box">
+          <Header />
+          <AddedFeatures />
+        </div>
+        <div className="box">
+          <AdditionalFeatures store={state.store} />
+          <Total car={state.car} additionalPrice={state.additionalPrice} />
+        </div>
+      </CarProvider>
     </div>
   );
 };
