@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { CarProvider, StoreProvider } from "./contexts/CarContext";
-
+import { addFeature } from "./actions";
 import Header from "./components/Header";
 import AddedFeatures from "./components/AddedFeatures";
 import AdditionalFeatures from "./components/AdditionalFeatures";
@@ -13,7 +13,9 @@ const App = ({ state }) => {
   };
 
   const buyItem = item => {
+    console.log('buy')
     // dipsatch an action here to add an item
+    addFeature(item)
   };
 
   return (
@@ -27,11 +29,12 @@ const App = ({ state }) => {
           <StoreProvider
             value={{
               store: state.store,
-              additionalPrice: state.additionalPrice
+              additionalPrice: state.additionalPrice, 
+              buyItem
             }}
           >
             <AdditionalFeatures />
-            <Total car={state.car} additionalPrice={state.additionalPrice} />
+            <Total />
           </StoreProvider>
         </div>
       </CarProvider>
@@ -47,5 +50,5 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  {}
+  { addFeature }
 )(App);
