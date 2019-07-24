@@ -7,16 +7,17 @@ import AddedFeatures from "./components/AddedFeatures";
 import AdditionalFeatures from "./components/AdditionalFeatures";
 import Total from "./components/Total";
 
-const App = ({ state }) => {
+const App = ({ state, addFeature }) => {
   const removeFeature = item => {
     // dispatch an action here to remove an item
   };
 
   const buyItem = item => {
-    console.log('buy')
+    console.log("buy");
     // dipsatch an action here to add an item
-    addFeature(item)
+    addFeature(item);
   };
+  console.log(state)
 
   return (
     <div className="boxes">
@@ -29,7 +30,7 @@ const App = ({ state }) => {
           <StoreProvider
             value={{
               store: state.store,
-              additionalPrice: state.additionalPrice, 
+              additionalPrice: state.additionalPrice,
               buyItem
             }}
           >
