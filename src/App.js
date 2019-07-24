@@ -5,7 +5,7 @@ import AddedFeatures from "./components/AddedFeatures";
 import AdditionalFeatures from "./components/AdditionalFeatures";
 import Total from "./components/Total";
 
-const App = () => {
+const App = ({state}) => {
   const removeFeature = item => {
     // dispatch an action here to remove an item
   };
@@ -28,7 +28,13 @@ const App = () => {
   );
 };
 
+const mapStateToProps = state => {
+  return {
+    state
+  };
+};
+
 export default connect(
-  null,
+  mapStateToProps,
   {}
 )(App);
