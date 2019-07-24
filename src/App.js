@@ -25,8 +25,15 @@ const App = ({ state }) => {
           <AddedFeatures />
         </div>
         <div className="box">
-          <AdditionalFeatures store={state.store} />
-          <Total car={state.car} additionalPrice={state.additionalPrice} />
+          <StoreProvider
+            value={{
+              store: state.store,
+              additionalPrice: state.additionalPrice
+            }}
+          >
+            <AdditionalFeatures store={state.store} />
+            <Total car={state.car} additionalPrice={state.additionalPrice} />
+          </StoreProvider>
         </div>
       </CarProvider>
     </div>
