@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
-import { StoreContext } from "../contexts/StoreContext";
+import { StoreContext } from "../contexts/CarContext";
 import AdditionalFeature from "./AdditionalFeature";
 
-const AdditionalFeatures = props => {
+const AdditionalFeatures = () => {
   const { store } = useContext(StoreContext);
   return (
     <div className="content">

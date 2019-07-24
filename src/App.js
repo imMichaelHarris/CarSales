@@ -1,7 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { CarProvider } from "./contexts/CarContext";
-import { StoreProvider } from "./contexts/StoreContext";
+import { CarProvider, StoreProvider } from "./contexts/CarContext";
 
 import Header from "./components/Header";
 import AddedFeatures from "./components/AddedFeatures";
