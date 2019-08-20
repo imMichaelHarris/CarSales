@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { useContext } from "react";
+import { CarContext } from "../contexts/CarContext";
 
-const Header = props => {
+const Header = () => {
+  const car = useContext(CarContext);
   return (
     <>
       <figure className="image is-128x128">
-        <img src={props.car.image} alt={props.car.name} />
+        <img src={car.image} alt={car.name} />
       </figure>
-      <h2>{props.car.name}</h2>
-      <p>Amount: ${props.car.price}</p>
+      <h2>{car.name}</h2>
+      <p>Amount: ${car.price}</p>
     </>
   );
 };
